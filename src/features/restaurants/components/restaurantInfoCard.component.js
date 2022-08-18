@@ -2,6 +2,8 @@ import React from "react";
 import { Card } from "react-native-paper";
 import styled from "styled-components";
 import { Image, View, Text } from "react-native";
+import { Spacer } from "../../../components/spacer.component";
+
 const RestaurantCard = styled(Card)`
   height: 300px;
 `;
