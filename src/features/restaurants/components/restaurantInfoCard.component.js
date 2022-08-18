@@ -1,51 +1,22 @@
 import React from "react";
-import { Card } from "react-native-paper";
-import styled from "styled-components";
-import { Image, View, Text } from "react-native";
-import { Spacer } from "../../../components/spacer.component";
-
-const RestaurantCard = styled(Card)`
-  height: 300px;
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-`;
-
-const Title = styled.Text`
-  font-size: ${(props) => props.theme.fontSizes.title};
-`;
-
-const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const Address = styled.Text`
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Rating = styled.View`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[1]};
-  padding-bottom: ${(props) => props.theme.space[1]};
-`;
-
-const RatingAndOpenNowView = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const RestaurantInfoIcon = styled(Image)`
-  width: 20px;
-  height: 20px;
-`;
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
+import {
+  RestaurantCard,
+  Info,
+  RatingAndInfoView,
+  Rating,
+  RestaurantCardCover,
+  IconsView,
+  RestaurantInfoIcon,
+} from "./restaurnatInfoCard.styles";
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
-    name = "restaurant name",
+    name = "The Alfonzo Shfonzo",
     icon = "https://picsum.photos/700",
     photos = ["https://picsum.photos/700", "https://via.placeholder.com/150"],
-    address = "restaurant address",
+    address = "212 S. Wacker Dr, Chicago, IL 60606",
     isOpenNow = true,
     rating = 5,
     isClosedTemporarily = true,
@@ -57,8 +28,8 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
-        <Title>{name}</Title>
-        <RatingAndOpenNowView>
+        <Text variant="label">{name}</Text>
+        <RatingAndInfoView>
           <Rating>
             {ratingArray.map((key) => (
               <RestaurantInfoIcon
@@ -67,18 +38,26 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               />
             ))}
           </Rating>
-          {isClosedTemporarily && (
-            <Text style={{ color: "red" }}>Closed temporarily</Text>
-          )}
-          {isOpenNow && (
-            <RestaurantInfoIcon
-              source={require("../../../../assets/open.jpg")}
-            />
-          )}
-          <RestaurantInfoIcon source={require("../../../../assets/bed.png")} />
-        </RatingAndOpenNowView>
+          <IconsView>
+            {isClosedTemporarily && (
+              <Text variant="error">Closed temporarily</Text>
+            )}
+            {isOpenNow && (
+              <Spacer position="left" size="large">
+                <RestaurantInfoIcon
+                  source={require("../../../../assets/open.jpg")}
+                />
+              </Spacer>
+            )}
+            <Spacer position="left" size="large">
+              <RestaurantInfoIcon
+                source={require("../../../../assets/bed.png")}
+              />
+            </Spacer>
+          </IconsView>
+        </RatingAndInfoView>
 
-        <Address>{address}</Address>
+        <Text variant="caption">{address}</Text>
       </Info>
     </RestaurantCard>
   );
