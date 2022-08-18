@@ -1,57 +1,16 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Searchbar } from "react-native-paper";
-import { Provider as PaperProvider } from "react-native-paper";
+import { RestaurantsScreen } from "./src/features/restaurants/components/restaurants.screen";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./src/infrastructure/theme";
 
 export default function App() {
-  const [searchQuery, setSearchQuery] = React.useState("");
-  const onChangeSearch = (query) => {
-    setSearchQuery(query);
-  };
-
   return (
     <>
-      <PaperProvider>
-        <View style={styles.container}>
-          <View style={styles.searchContainer}>
-            <Searchbar
-              placeholder="Search"
-              onChange={onChangeSearch}
-              value={searchQuery}
-            />
-          </View>
-          <View style={styles.listContainer}>
-            <Text style={styles.list}>list</Text>
-          </View>
-        </View>
+      <ThemeProvider theme={theme}>
+        <RestaurantsScreen />
         <ExpoStatusBar style="auto" />
-      </PaperProvider>
+      </ThemeProvider>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
-
-  searchContainer: {
-    backgroundColor: "white",
-    flex: 0.05,
-    width: "100%",
-    padding: 10,
-    justifyContent: "center",
-    alignContent: "flex-start",
-  },
-  searchText: {},
-
-  listContainer: {
-    backgroundColor: "yellow",
-    padding: 10,
-    flex: 1,
-    width: "100%",
-    height: "100%",
-  },
-});
