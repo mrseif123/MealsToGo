@@ -1,6 +1,6 @@
 import React from "react";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { Text } from "../../../components/text.component";
+import { Text } from "../../../components/typography/text.component";
 import {
   RestaurantCard,
   Info,
@@ -15,7 +15,10 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
     name = "The Alfonzo Shfonzo",
     icon = "https://picsum.photos/700",
-    photos = ["https://picsum.photos/700", "https://via.placeholder.com/150"],
+    photos = [
+      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+      "https://via.placeholder.com/150",
+    ],
     address = "212 S. Wacker Dr, Chicago, IL 60606",
     isOpenNow = true,
     rating = 5,
