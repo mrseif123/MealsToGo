@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, FlatList } from "react-native";
 import { Searchbar } from "react-native-paper";
 import styled from "styled-components";
 import { RestaurantInfo } from "../components/restaurantInfoCard.component";
@@ -35,9 +35,12 @@ export const RestaurantsScreen = () => {
             value={searchQuery}
           />
         </SearchContainer>
-        <RestaurantCardList>
-          <RestaurantInfo />
-        </RestaurantCardList>
+        <FlatList
+          data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
+          renderItem={({ item }) => <RestaurantInfo restaurant={item} />}
+          keyExtractor={(item) => item.name}
+          contentContainerStyle={{ padding: 16 }}
+        />
       </SafeArea>
     </>
   );

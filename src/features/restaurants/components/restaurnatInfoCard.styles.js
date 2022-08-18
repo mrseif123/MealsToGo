@@ -1,8 +1,10 @@
 import { Card } from "react-native-paper";
 import styled from "styled-components";
 import { Image } from "react-native";
+
 export const RestaurantCard = styled(Card)`
   height: 300px;
+  margin-bottom: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`

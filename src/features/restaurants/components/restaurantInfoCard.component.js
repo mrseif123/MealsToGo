@@ -1,6 +1,6 @@
 import React from "react";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { Text } from "../../../components/typography/text.component";
+import { Text } from "../../../components/text.component";
 import {
   RestaurantCard,
   Info,
