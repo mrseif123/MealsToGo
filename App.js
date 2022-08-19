@@ -9,6 +9,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeArea } from "./src/components/utility/safeArea.component";
 import { Ionicons } from "@expo/vector-icons";
 
+import { restaurantRequest } from "./src/services/restaurants/restaurants.service";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
