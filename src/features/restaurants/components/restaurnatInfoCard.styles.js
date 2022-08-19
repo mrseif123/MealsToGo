@@ -15,6 +15,11 @@ export const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+export const Icon = styled.Image`
+  width: 15px;
+  height: 15px;
+`;
+
 export const Rating = styled.View`
   flex-direction: row;
   padding-top: ${(props) => props.theme.space[1]};
@@ -29,9 +34,4 @@ export const RatingAndInfoView = styled.View`
 export const IconsView = styled.View`
   flex-direction: row;
   justify-content: space-between;
-`;
-
-export const RestaurantInfoIcon = styled(Image)`
-  width: 20px;
-  height: 20px;
 `;
