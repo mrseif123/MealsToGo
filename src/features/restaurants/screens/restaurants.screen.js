@@ -7,6 +7,7 @@ import { SafeArea } from "../../../components/utility/safeArea.component.js";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { colors } from "../../../infrastructure/theme/colors";
+
 const SearchContainer = styled(View)`
   padding: ${(props) => props.theme.space[3]};
   background-color: ${(props) => props.theme.colors.ui.tertiary};
@@ -25,6 +26,7 @@ const LoadingContainer = styled.View`
 
 export const RestaurantsScreen = () => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+
   return (
     <>
       <SafeArea>
