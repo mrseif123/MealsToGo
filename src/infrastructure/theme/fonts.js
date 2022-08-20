@@ -12,6 +12,7 @@ export const fontWeights = {
 };
 
 export const fontSizes = {
+  small: "9px",
   caption: "12px",
   button: "14px",
   body: "16px",

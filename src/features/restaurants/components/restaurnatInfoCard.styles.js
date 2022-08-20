@@ -1,6 +1,5 @@
 import { Card } from "react-native-paper";
 import styled from "styled-components";
-import { Image } from "react-native";
 
 export const RestaurantCard = styled(Card)`
   height: 300px;
