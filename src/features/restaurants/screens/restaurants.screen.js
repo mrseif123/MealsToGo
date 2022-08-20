@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, FlatList, Pressable } from "react-native";
+import { View, FlatList } from "react-native";
 import { Colors, ActivityIndicator } from "react-native-paper";
 
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import { SafeArea } from "../../../components/utility/safeArea.component.js";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Search } from "../components/search.component";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const RestaurantCardList = styled(FlatList).attrs({ padding: 16 })``;
 
@@ -29,13 +30,13 @@ export const RestaurantsScreen = ({ navigation }) => {
           data={restaurants}
           renderItem={({ item }) => {
             return (
-              <Pressable
+              <TouchableOpacity
                 onPress={() => navigation.navigate("RestaurantsDetails")}
               >
                 <Spacer position="bottom" size="large">
                   <RestaurantInfo restaurant={item} />
                 </Spacer>
-              </Pressable>
+              </TouchableOpacity>
             );
           }}
           keyExtractor={(item) => item.name}
