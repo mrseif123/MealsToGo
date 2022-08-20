@@ -6,19 +6,26 @@ import { LocationContext } from "../../../services/location/location.context";
 
 const SearchContainer = styled(View)`
   padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  width: 100%;
+  justify-content: center;
 `;
 
 export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = React.useState(keyword);
+
   useEffect(() => {
     setSearchKeyword(keyword);
   }, [keyword]);
+
   return (
     <SearchContainer>
       <Searchbar
         placeholder={"Search for a location"}
+        icon="map"
         value={searchKeyword}
         onChangeText={(text) => {
           if (!text.length) {
