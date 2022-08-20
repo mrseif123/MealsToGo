@@ -1,7 +1,8 @@
+import { Platform } from "react-native";
 export const fonts = {
-  body: "Roboto",
-  heading: "Roboto",
-  monospace: "Roboto Mono",
+  body: Platform.OS === "ios" ? "Copperplate" : "Roboto",
+  heading: Platform.OS === "ios" ? "Copperplate" : "Roboto",
+  monospace: Platform.OS === "ios" ? "Copperplate" : "Roboto",
 };
 
 export const fontWeights = {

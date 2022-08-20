@@ -7,11 +7,7 @@ import { SafeArea } from "../../../components/utility/safeArea.component.js";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { colors } from "../../../infrastructure/theme/colors";
-
-const SearchContainer = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-`;
+import { Search } from "../components/search.component";
 
 const RestaurantCardList = styled(FlatList).attrs({ padding: 16 })``;
 
@@ -35,9 +31,7 @@ export const RestaurantsScreen = () => {
             <Loading size={50} animating={true} color={colors.red800} />
           </LoadingContainer>
         )}
-        <SearchContainer>
-          <Searchbar />
-        </SearchContainer>
+        <Search />
         <RestaurantCardList
           data={restaurants}
           renderItem={({ item }) => {
