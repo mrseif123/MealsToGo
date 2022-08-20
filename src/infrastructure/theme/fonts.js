@@ -1,6 +1,6 @@
 export const fonts = {
   body: "Roboto",
-  heading: "Droid Sans",
+  heading: "Roboto",
   monospace: "Roboto Mono",
 };
 
