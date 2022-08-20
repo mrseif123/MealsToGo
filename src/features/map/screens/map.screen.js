@@ -5,6 +5,7 @@ import { Search } from "../components/search.component";
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { RestaurantCallout } from "../components/map.callout.component";
+
 const Map = styled(MapView)`
   height: 100%;
   width: 100%;
@@ -15,7 +16,7 @@ const StyledCallout = styled(MapView.Callout)`
   height: 100px;
 `;
 
-export const MapScreen = () => {
+export const MapScreen = ({ navigation }) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -49,7 +50,13 @@ export const MapScreen = () => {
                 longitude: restaurant.geometry.location.lng,
               }}
             >
-              <StyledCallout>
+              <StyledCallout
+                onPress={() =>
+                  navigation.navigate("RestaurantsDetails", {
+                    restaurant,
+                  })
+                }
+              >
                 <RestaurantCallout restaurant={restaurant} />
               </StyledCallout>
             </MapView.Marker>
