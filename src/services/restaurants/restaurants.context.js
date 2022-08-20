@@ -31,6 +31,7 @@ export const RestaurantsContextProvider = ({ children }) => {
 
   const retriveRestaurants = (location) => {
     setIsLoading(true);
+    setRestaurants([]);
     setTimeout(() => {
       restaurantsRequest(location)
         .then(restaurantsTransform)
