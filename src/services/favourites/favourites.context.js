@@ -26,14 +26,15 @@ export const FavouritesContextProvider = ({ children }) => {
       console.log("error loading", e);
     }
   };
+
   useEffect(() => {
-    if (user) {
+    if (user && user.uid) {
       loadFavourites(user.uid);
     }
   }, [user]);
 
   useEffect(() => {
-    if (user) {
+    if (user && user.uid && favourites.length) {
       saveFavorite(favourites, user.uid);
     }
   }, [favourites, user]);

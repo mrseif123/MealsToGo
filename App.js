@@ -21,25 +21,6 @@ if (!firebase.apps.length) {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword("test@mrs.com", "test123")
-        .then((user) => {
-          setIsAuthenticated(true);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 2000);
-  }, []);
-
-  if (!isAuthenticated) {
-    return null;
-  }
-
   return (
     <>
       <ThemeProvider theme={theme}>

@@ -8,27 +8,17 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       setUser(user);
       setLoading(false);
-      setIsAuthenticated(true);
+      // setIsAuthenticated(true);
     } else {
       setLoading(false);
     }
   });
 
-  const onLogout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        setUser(null);
-        setError(null);
-      });
-  };
   const onLogin = async (email, password) => {
     setLoading(true);
 
@@ -38,8 +28,8 @@ export const AuthenticationContextProvider = ({ children }) => {
         setLoading(false);
       })
       .catch((error) => {
-        setError(error.toString());
         setLoading(false);
+        setError(error.toString());
       });
   };
 
@@ -61,6 +51,17 @@ export const AuthenticationContextProvider = ({ children }) => {
         setError(e.toString());
       });
   };
+
+  const onLogout = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        setError(null);
+      });
+  };
+
   return (
     <AuthenticationContext.Provider
       value={{
