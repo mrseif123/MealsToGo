@@ -10,10 +10,11 @@ import { AuthenticationContext } from "../../../services/authentication/authenti
 import { TextInput } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+import { ActivityIndicator, Colors } from "react-native-paper";
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const { onLogin, error } = React.useContext(AuthenticationContext);
+  const { onLogin, error, loading } = React.useContext(AuthenticationContext);
 
   return (
     <BackgroundContainer>
@@ -45,7 +46,6 @@ export const LoginScreen = ({ navigation }) => {
             secureTextEntry={true}
             autoCapitalize="none"
             label="Passwrod"
-            secure
             value={password}
             onChangeText={(text) => setPassword(text)}
           />
@@ -59,20 +59,28 @@ export const LoginScreen = ({ navigation }) => {
             </ErrorContainer>
           </Spacer>
         )}
-        <LoginButton
-          icon="lock-open-outline"
-          mode="contained"
-          onPress={() => {
-            onLogin(email, password);
-          }}
-        ></LoginButton>
+        {loading ? (
+          <ActivityIndicator
+            style={{ marginBottom: 10, marginTop: 10 }}
+            animating={true}
+            color={Colors.red800}
+          />
+        ) : (
+          <LoginButton
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => {
+              onLogin(email, password);
+            }}
+          ></LoginButton>
+        )}
       </BackgroundContainerLogin>
 
       <Spacer size="large">
         <Button
           mode="contained"
           color="tomato"
-          marginTop={350}
+          marginTop={300}
           onPress={() => navigation.goBack()}
         >
           Back
