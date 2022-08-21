@@ -11,6 +11,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { FavouritesBar } from "../../../components/favourites/favouritesBar.component";
 import { Search } from "../components/search.component";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { FadeInView } from "../../../components/animations/fade.animations";
 
 export const RestaurantCardList = styled(FlatList).attrs({ padding: 16 })``;
 
@@ -51,7 +52,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                 }
               >
                 <Spacer position="bottom" size="large">
-                  <RestaurantInfo restaurant={item} />
+                  <FadeInView duration={1000}>
+                    <RestaurantInfo restaurant={item} />
+                  </FadeInView>
                 </Spacer>
               </TouchableOpacity>
             );
