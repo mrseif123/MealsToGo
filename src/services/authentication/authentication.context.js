@@ -10,8 +10,28 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      setUser(user);
+      setLoading(false);
+      setIsAuthenticated(true);
+    } else {
+      setLoading(false);
+    }
+  });
+
+  const onLogout = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        setError(null);
+      });
+  };
   const onLogin = async (email, password) => {
     setLoading(true);
+
     loginRequest(email, password)
       .then((u) => {
         setUser(u);
@@ -49,6 +69,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         error,
         onLogin,
         onRegister,
+        onLogout,
         isAuthenticated: !!user,
       }}
     >
