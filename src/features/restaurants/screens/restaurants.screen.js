@@ -5,6 +5,7 @@ import { Colors, ActivityIndicator } from "react-native-paper";
 import styled from "styled-components";
 import { RestaurantInfo } from "../components/restaurantInfoCard.component";
 import { SafeArea } from "../../../components/utility/safeArea.component.js";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Search } from "../components/search.component";
@@ -18,6 +19,8 @@ const Loading = styled(ActivityIndicator)`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+  const { favourites, addToFavourites, removeFromFavourites } =
+    useContext(FavouritesContext);
 
   return (
     <>
