@@ -12,17 +12,15 @@ import { FavouritesBar } from "../../../components/favourites/favouritesBar.comp
 import { Search } from "../components/search.component";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const RestaurantCardList = styled(FlatList).attrs({ padding: 16 })``;
+export const RestaurantCardList = styled(FlatList).attrs({ padding: 16 })``;
 
 const Loading = styled(ActivityIndicator)`
   margin-top: 40%;
 `;
 
 export const RestaurantsScreen = ({ navigation }) => {
-  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
-  const { favourites, addToFavourites, removeFromFavourites } =
-    useContext(FavouritesContext);
-
+  const { restaurants, isLoading } = useContext(RestaurantsContext);
+  const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
   return (
