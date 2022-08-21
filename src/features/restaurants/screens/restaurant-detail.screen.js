@@ -1,7 +1,6 @@
 import React from "react";
 import { RestaurantInfo } from "../components/restaurantInfoCard.component";
 import { SafeArea } from "../../../components/utility/safeArea.component";
-import { List } from "react-native-paper";
 import { Menu } from "../components/menu.component";
 
 export const RestaurantDetailScreen = ({ route }) => {
