@@ -23,7 +23,7 @@ export const LoginScreen = ({ navigation }) => {
           underlineColor="tomato"
           activeUnderlineColor="tomato"
           style={{
-            marginTop: 8,
+            marginTop: 10,
             width: "80%",
             alignSelf: "center",
             borderRadius: 10,
@@ -72,7 +72,7 @@ export const LoginScreen = ({ navigation }) => {
         <Button
           mode="contained"
           color="tomato"
-          marginTop={300}
+          marginTop={350}
           onPress={() => navigation.goBack()}
         >
           Back
