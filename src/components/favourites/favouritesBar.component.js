@@ -22,7 +22,6 @@ export const FavouritesBar = ({ favourties, onNavigate }) => {
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {favourties.map((restaurant) => {
-          console.log(restaurant);
           const key = restaurant.name;
           return (
             <Spacer key={key} position="left" size="medium">
