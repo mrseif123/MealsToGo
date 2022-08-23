@@ -13,7 +13,6 @@ import { NoFavouritesArea } from "../components/settings.styles";
 
 export const FavouritesScreen = ({ navigation }) => {
   const { favourites } = useContext(FavouritesContext);
-  console.log(favourites);
   return favourites.length ? (
     <SafeArea>
       <RestaurantCardList
