@@ -13,3 +13,5 @@ web-build/
 
 # macOS
 .DS_Store
+functions/firebase-debug.log
+functions/ui-debug.log
