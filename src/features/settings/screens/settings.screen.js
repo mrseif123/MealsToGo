@@ -1,28 +1,48 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { SafeArea } from "../../../components/utility/safeArea.component";
 import { List, Avatar } from "react-native-paper";
-import styled from "styled-components/native";
-
+import { TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
-const SettingsItem = styled(List.Item)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-const AvatarContainer = styled.View`
-  align-items: center;
-`;
+import { SettingsItem, AvatarContainer } from "../components/settings.styles";
 
 export const SettingsScreen = ({ navigation }) => {
   const { onLogout, user } = useContext(AuthenticationContext);
+  const [photo, setPhoto] = useState(null);
+
+  const loadPhoto = async (currentUser) => {
+    try {
+      const value = await AsyncStorage.getItem(`@photo-${currentUser.uid}`);
+      if (value !== null) {
+        setPhoto(value);
+      }
+    } catch (e) {
+      console.log("error loading", e);
+    }
+  };
+
+  useFocusEffect(() => {
+    loadPhoto(user);
+  }, [user]);
+
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
-        <Spacer position="top" size="large">
-          <Text variant="label">{user.email}</Text>
-        </Spacer>
+        <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
+          {!photo ? (
+            <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+          ) : (
+            <Avatar.Image size={180} source={{ uri: photo }} />
+          )}
+          <Spacer position="top" size="large">
+            <Text variant="label">{user.email}</Text>
+          </Spacer>
+        </TouchableOpacity>
       </AvatarContainer>
+
       <List.Section>
         <SettingsItem
           style={{ padding: 16 }}

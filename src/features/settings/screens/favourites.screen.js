@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
@@ -10,11 +9,8 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantCardList } from "../../restaurants/screens/restaurants.screen";
 import { RestaurantInfo } from "../../restaurants/components/restaurantInfoCard.component";
+import { NoFavouritesArea } from "../components/settings.styles";
 
-const NoFavouritesArea = styled(SafeArea)`
-  align-items: center;
-  justify-content: center;
-`;
 export const FavouritesScreen = ({ navigation }) => {
   const { favourites } = useContext(FavouritesContext);
   console.log(favourites);
