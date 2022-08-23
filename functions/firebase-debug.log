@@ -126,3 +126,90 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "geocode" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finished \"geocode\" in ~1s"}}
 [debug] [2022-08-23T14:56:31.581Z] [worker-us-central1-geocode-28d20719-84d8-4e72-a949-75ff99f2fb11]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-geocode-28d20719-84d8-4e72-a949-75ff99f2fb11]: IDLE"}}
 [debug] [2022-08-23T14:56:31.582Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-08-23T15:44:20.057Z] ----------------------------------------------------------------------
+[debug] [2022-08-23T15:44:20.060Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codo4\OneDrive\Documents\Rips\React-Native\MealsToGo\functions\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2022-08-23T15:44:20.061Z] CLI Version:   11.8.0
+[debug] [2022-08-23T15:44:20.061Z] Platform:      win32
+[debug] [2022-08-23T15:44:20.061Z] Node Version:  v16.13.1
+[debug] [2022-08-23T15:44:20.062Z] Time:          Tue Aug 23 2022 18:44:20 GMT+0300 (Israel Daylight Time)
+[debug] [2022-08-23T15:44:20.063Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-23T15:44:20.176Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-23T15:44:20.176Z] > authorizing via signed-in user (codo47@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project mealstogo-mrs. This may result in unexpected behavior. 
+[debug] [2022-08-23T15:44:20.207Z] [hub] writing locator at C:\Users\codo4\AppData\Local\Temp\hub-mealstogo-mrs.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-08-23T15:44:20.270Z] defaultcredentials: writing to file C:\Users\codo4\AppData\Roaming\firebase\codo47_gmail_com_application_default_credentials.json
+[debug] [2022-08-23T15:44:20.273Z] Setting GAC to C:\Users\codo4\AppData\Roaming\firebase\codo47_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\codo4\\AppData\\Roaming\\firebase\\codo47_gmail_com_application_default_credentials.json"}}
+[debug] [2022-08-23T15:44:20.274Z] > refreshing access token with scopes: []
+[debug] [2022-08-23T15:44:20.277Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-23T15:44:20.277Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-23T15:44:20.575Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-23T15:44:20.576Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-23T15:44:20.596Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-mrs/adminSdkConfig [none]
+[debug] [2022-08-23T15:44:22.828Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-mrs/adminSdkConfig 200
+[debug] [2022-08-23T15:44:22.828Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-mrs/adminSdkConfig {"projectId":"mealstogo-mrs","storageBucket":"mealstogo-mrs.appspot.com"}
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4002 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4002 instead."}}
+[debug] [2022-08-23T15:44:22.890Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-23T15:44:22.890Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-08-23T15:44:22.890Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\codo4\\.cache\\firebase\\emulators\\ui-v1.9.0\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\codo4\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.9.0\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-08-23T15:44:23.116Z] Web / API server started at localhost:4002
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4002\n"}}
+[info] i  functions: Watching "C:\Users\codo4\OneDrive\Documents\Rips\React-Native\MealsToGo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\codo4\\OneDrive\\Documents\\Rips\\React-Native\\MealsToGo\\functions\" for Cloud Functions..."}}
+[debug] [2022-08-23T15:44:23.178Z] Validating nodejs source
+[debug] [2022-08-23T15:44:26.155Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.16",
+    "firebase": "8.2.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "firebase-tools": "11.8.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-23T15:44:26.155Z] Building nodejs source
+[debug] [2022-08-23T15:44:26.155Z] Analyzing nodejs backend spec
+[debug] [2022-08-23T15:44:26.158Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-23T15:44:26.549Z] Serving at port 9005
+
+[debug] [2022-08-23T15:44:26.883Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-23T15:44:26.893Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[info] +  functions[us-central1-geocode]: http function initialized (http://localhost:5001/mealstogo-mrs/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mealstogo-mrs/us-central1/geocode)."}}
+[info] +  functions[us-central1-placesNearby]: http function initialized (http://localhost:5001/mealstogo-mrs/us-central1/placesNearby). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mealstogo-mrs/us-central1/placesNearby)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4002                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4002/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

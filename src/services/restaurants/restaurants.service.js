@@ -1,5 +1,5 @@
 import camelize from "camelize";
-import {host, isDevelopment} from "../../utils/env"
+import {host, isDevelopment, isMock} from "../../utils/env"
 import { mocks, mockImages } from "./mocks";
 
 export const restaurantsRequest = (location) => {
@@ -12,11 +12,11 @@ export const restaurantsRequest = (location) => {
         resolve(mock);
       });
   }
-  return fetch(
-    `${host}/placesNearby?location=${location}`
-  ).then((res) => {
-    return res.json();
-  });
+  return fetch(`${host}/placesNearby?location=${location}&mock=${isMock}`).then(
+    (res) => {
+      return res.json();
+    }
+  );
 };
 
 export const restaurantsTransform = ({ results = [] }) => {

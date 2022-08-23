@@ -1,5 +1,5 @@
 import camelize from "camelize";
-import { host, isDevelopment } from "../../utils/env";
+import { host, isDevelopment, isMock } from "../../utils/env";
 import { locations } from "./location.mock";
 
 export const locationRequest = (searchTerm) => {
@@ -12,14 +12,13 @@ export const locationRequest = (searchTerm) => {
       resolve(locationMock);
     });
   }
-  return fetch(`${host}/geocode?=city${searchTerm}`).then((res) => {
+  return fetch(`${host}/geocode?=city${searchTerm}&mock=${isMock}`).then((res) => {
     return res.json();
   });
 };
 
 export const locationTransform = (results) => {
   const formattedResults = camelize(results);
-  console.log(formattedResults);
   const { geometry = {} } = formattedResults.results[0];
   const { lat, lng } = geometry.location;
 
