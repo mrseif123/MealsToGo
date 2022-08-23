@@ -15,3 +15,4 @@ web-build/
 .DS_Store
 functions/firebase-debug.log
 functions/ui-debug.log
+.runtimeconfig.json
