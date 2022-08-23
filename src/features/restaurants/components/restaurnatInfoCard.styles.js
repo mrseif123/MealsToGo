@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const RestaurantCard = styled(Card)`
   height: 300px;
   margin-bottom: ${(props) => props.theme.space[3]};
+  width: 95%;
+  align-self: center;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`

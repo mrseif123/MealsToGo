@@ -1,14 +1,13 @@
 import * as React from "react";
 import { ScrollView } from "react-native-gesture-handler";
-import { List } from "react-native-paper";
+import { List, Divider } from "react-native-paper";
 
 export const Menu = () => {
-  const [expanded, setExpanded] = React.useState(true);
-  const [breakfastExpanded, setBreakfastExpanded] = React.useState(true);
-  const [lunchExpanded, setLunchExpanded] = React.useState(true);
-  const [dinnerExpanded, setDinnerExpanded] = React.useState(true);
-  const [drinksExpanded, setDrinksExpanded] = React.useState(true);
-
+  const [breakfastExpanded, setBreakfastExpanded] = React.useState(false);
+  const [lunchExpanded, setLunchExpanded] = React.useState(false);
+  const [dinnerExpanded, setDinnerExpanded] = React.useState(false);
+  const [drinksExpanded, setDrinksExpanded] = React.useState(false);
+false
   return (
     <ScrollView>
       <List.Section title="Menu">
@@ -21,7 +20,7 @@ export const Menu = () => {
           <List.Item title="Eggs Benedict" />
           <List.Item title="Classic Breakfast" />
         </List.Accordion>
-
+        <Divider />
         <List.Accordion
           title="Lunch"
           left={(props) => <List.Icon {...props} icon="food" />}
@@ -32,6 +31,7 @@ export const Menu = () => {
           <List.Item title="Steak Sandwich" />
           <List.Item title="Mushroom Soup" />
         </List.Accordion>
+        <Divider />
 
         <List.Accordion
           title="Dinner"
@@ -43,6 +43,7 @@ export const Menu = () => {
           <List.Item title="Veal Cutlet with Checkin Mushroom Rotini" />
           <List.Item title="Steak Frites" />
         </List.Accordion>
+        <Divider />
 
         <List.Accordion
           title="Drinks"

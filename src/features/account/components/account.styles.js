@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { Button } from "react-native-paper";
 import { TextInput } from "react-native-paper";
 import { Text } from "react-native";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const BackgroundContainer = styled.ImageBackground.attrs({
   source: require("../../../../assets/home_bg.jpg"),
@@ -33,13 +34,13 @@ export const AccountContainer = styled.View`
 `;
 
 export const AuthButton = styled(Button).attrs({
-  color: "tomato",
+  color: colors.brand.primary,
 })`
   padding: ${(props) => props.theme.space[2]};
 `;
 
 export const LoginButton = styled(Button).attrs({
-  color: "tomato",
+  color: colors.brand.primary,
 })`
   padding: ${(props) => props.theme.space[2]};
   width: 70%;

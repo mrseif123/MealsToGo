@@ -6,6 +6,7 @@ import { SafeArea } from "../../../components/utility/safeArea.component";
 
 export const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
+  background-color: rgba(255, 255, 255, 0.4);
 `;
 export const AvatarContainer = styled.View`
   align-items: center;
@@ -23,6 +24,10 @@ export const ButtonCotainer = styled.View`
   margin: 64px;
 `;
 
+export const TransparentSafeArea = styled(SafeArea)`
+  background-color: transparent;
+  `;
+
 export const ButtonStyled = styled(TouchableOpacity)`
   flex: 1;
   align-self: flex-end;
@@ -36,4 +41,12 @@ export const CameraStyled = styled(Camera)`
 export const NoFavouritesArea = styled(SafeArea)`
   align-items: center;
   justify-content: center;
+`;
+
+export const SettingsBackground = styled.ImageBackground.attrs({
+  source: require("../../../../assets/home_bg.jpg"),
+})`
+  position: absolute;
+  height: 100%;
+  width: 100%;
 `;

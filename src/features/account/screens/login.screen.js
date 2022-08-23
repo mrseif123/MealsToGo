@@ -11,6 +11,7 @@ import { TextInput } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { ActivityIndicator, Colors } from "react-native-paper";
+import { colors } from "../../../infrastructure/theme/colors";
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -20,9 +21,6 @@ export const LoginScreen = ({ navigation }) => {
     <BackgroundContainer>
       <BackgroundContainerLogin>
         <TextInput
-          selectionColor="tomato"
-          underlineColor="tomato"
-          activeUnderlineColor="tomato"
           style={{
             marginTop: 10,
             width: "80%",
@@ -38,9 +36,6 @@ export const LoginScreen = ({ navigation }) => {
         />
         <Spacer size="medium">
           <TextInput
-            selectionColor="tomato"
-            underlineColor="tomato"
-            activeUnderlineColor="tomato"
             style={{ width: "80%", alignSelf: "center", borderRadius: 10 }}
             textContentType="password"
             secureTextEntry={true}
@@ -79,7 +74,7 @@ export const LoginScreen = ({ navigation }) => {
       <Spacer size="large">
         <Button
           mode="contained"
-          color="tomato"
+          color={colors.brand.muted}
           marginTop={300}
           onPress={() => navigation.goBack()}
         >
