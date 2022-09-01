@@ -9,7 +9,9 @@ import {
   Title,
   AnimationWrapper,
 } from "../components/account.styles";
-import styled from "styled-components";
+import { Button } from "react-native-elements";
+import { Entypo } from "@expo/vector-icons";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const AccountScreen = ({ navigation }) => {
   return (
@@ -26,25 +28,43 @@ export const AccountScreen = ({ navigation }) => {
       </AnimationWrapper>
       <Title>Meals To Go</Title>
       <AccountContainer>
-        <AuthButton
-          icon="lock-open-outline"
+        <Button
+          buttonStyle={{ backgroundColor: colors.brand.primary, width: 140 }}
+          icon={
+            <Entypo
+              name="lock"
+              size={24}
+              color="white"
+              style={{ paddingRight: 10 }}
+            />
+          }
           mode="contained"
           onPress={() => {
             navigation.navigate("Login");
           }}
+          title="Login"
         >
           LOGIN
-        </AuthButton>
+        </Button>
         <Spacer size="large">
-          <AuthButton
-            icon="email"
+          <Button
+            icon={
+              <Entypo
+                name="mail"
+                size={24}
+                color="white"
+                style={{ paddingRight: 10 }}
+              />
+            }
             mode="contained"
             onPress={() => {
               navigation.navigate("Register");
             }}
+            title="Register"
+            buttonStyle={{ backgroundColor: colors.brand.primary, width: 140 }}
           >
             Register
-          </AuthButton>
+          </Button>
         </Spacer>
       </AccountContainer>
     </BackgroundContainer>

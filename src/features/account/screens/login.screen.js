@@ -5,6 +5,7 @@ import {
   ErrorContainer,
   LoginButton,
 } from "../components/account.styles";
+import { Button as ElementsButton } from "react-native-elements";
 import { Button } from "react-native-paper";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { TextInput } from "react-native-paper";
@@ -12,6 +13,8 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { colors } from "../../../infrastructure/theme/colors";
+import { Entypo } from "@expo/vector-icons";
+
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -61,13 +64,22 @@ export const LoginScreen = ({ navigation }) => {
             color={Colors.red800}
           />
         ) : (
-          <LoginButton
-            icon="lock-open-outline"
+          <ElementsButton
+            icon={<Entypo name="lock-open" size={24} color="white" />}
             mode="contained"
             onPress={() => {
               onLogin(email, password);
             }}
-          ></LoginButton>
+            buttonStyle={{
+              marginTop: 20,
+              marginBottom: 10,
+              width: "60%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              backgroundColor: colors.brand.primary,
+            }}
+            title="Login"
+          ></ElementsButton>
         )}
       </BackgroundContainerLogin>
 
@@ -77,6 +89,7 @@ export const LoginScreen = ({ navigation }) => {
           color={colors.brand.muted}
           marginTop={300}
           onPress={() => navigation.goBack()}
+          title="Back"
         >
           Back
         </Button>

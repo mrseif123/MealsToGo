@@ -5,13 +5,15 @@ import {
   ErrorContainer,
   LoginButton,
 } from "../components/account.styles";
+import { Entypo } from "@expo/vector-icons";
 import { Button } from "react-native-paper";
+import { Button as ButtonsElement } from "react-native-elements";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { TextInput } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { ActivityIndicator, Colors } from "react-native-paper";
-import {colors } from "../../../infrastructure/theme/colors";
+import { colors } from "../../../infrastructure/theme/colors";
 export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -23,7 +25,6 @@ export const RegisterScreen = ({ navigation }) => {
     <BackgroundContainer>
       <BackgroundContainerLogin>
         <TextInput
-
           style={{
             marginTop: 10,
             width: "80%",
@@ -39,7 +40,6 @@ export const RegisterScreen = ({ navigation }) => {
         />
         <Spacer size="medium">
           <TextInput
-
             style={{ width: "80%", alignSelf: "center", borderRadius: 10 }}
             textContentType="password"
             secureTextEntry={true}
@@ -51,7 +51,6 @@ export const RegisterScreen = ({ navigation }) => {
         </Spacer>
         <Spacer size="medium">
           <TextInput
-
             style={{ width: "80%", alignSelf: "center", borderRadius: 10 }}
             textContentType="password"
             secureTextEntry={true}
@@ -77,15 +76,31 @@ export const RegisterScreen = ({ navigation }) => {
             color={Colors.red800}
           />
         ) : (
-          <LoginButton
-            icon="email"
+          <ButtonsElement
+            icon={
+              <Entypo
+                name="mail"
+                size={24}
+                color="white"
+                style={{ paddingRight: 10 }}
+              />
+            }
             mode="contained"
             onPress={() => {
               onRegister(email, password, repeatedPassword);
             }}
+            title="Register"
+            buttonStyle={{
+              marginTop: 20,
+              marginBottom: 10,
+              width: "60%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              backgroundColor: colors.brand.primary,
+            }}
           >
             Register
-          </LoginButton>
+          </ButtonsElement>
         )}
       </BackgroundContainerLogin>
 
